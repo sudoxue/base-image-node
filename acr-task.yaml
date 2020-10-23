@@ -1,0 +1,10 @@
+version: v1.1.0
+steps:
+  - build: >
+      -f ./Dockerfile
+      -t $Registry/node:{{.Run.ID}}
+      -t $Registry/node:9-alpine
+      .
+  - push: 
+    - "$Registry/node:{{.Run.ID}}"
+    - "$Registry/node:9-alpine"
