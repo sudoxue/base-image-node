@@ -2,9 +2,9 @@ version: v1.1.0
 steps:
   - build: >
       -f ./Dockerfile
-      -t $Registry/node:{{.Run.ID}}
-      -t $Registry/node:9-alpine
+      -t {{.Run.Registry}}/node:{{.Run.ID}}
+      -t {{.Run.Registry}}/node:15-alpine
       .
   - push: 
-    - "$Registry/node:{{.Run.ID}}"
-    - "$Registry/node:9-alpine"
+    - "{{.Run.Registry}}/node:15-alpine-{{.Run.ID}}"
+    - "{{.Run.Registry}}/node:15-alpine"
