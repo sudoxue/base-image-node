@@ -2,7 +2,7 @@ version: v1.1.0
 steps:
   - build: >
       -f ./Dockerfile
-      -t {{.Run.Registry}}/node:{{.Run.ID}}
+      -t {{.Run.Registry}}/node:15-alpine-{{.Run.ID}}
       -t {{.Run.Registry}}/node:15-alpine
       .
   - push: 
