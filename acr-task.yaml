@@ -2,6 +2,7 @@ version: v1.1.0
 steps:
   - build: >
       -f ./Dockerfile
+      --build-arg REGISTRY_FROM_URL={{.Values.REGISTRY_FROM_URL}} 
       -t {{.Run.Registry}}/node:15-alpine-{{.Run.ID}}
       -t {{.Run.Registry}}/node:15-alpine
       .
